@@ -3,15 +3,14 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "storageAccountName": {
-            "type": "string",
-            "metadata": {
-                "description": "Specifies the name of the Azure Storage account."
-            }
+	    "defaultValue": "",
+            "type": "string"
         },
-		"location": {
-			"allowedValues": ["centralus", "eastus", "eastus2", "northcentralus", "southcentralus", "westcentralus", "westus", "westus2"],
-			"type": "String"
-	    }
+	"location": {
+	    "defaultValue": "westus2",
+	    "allowedValues": ["centralus", "eastus", "eastus2", "northcentralus", "southcentralus", "westcentralus", "westus", "westus2"],
+	    "type": "String"
+	}
     },
     "variables": {},
     "resources": [
