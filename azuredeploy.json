@@ -6,6 +6,9 @@
             "defaultValue": "",
             "type": "String"
         }
+		"location": {
+			"allowedValues": ["centralus", "eastus", "eastus2", "northcentralus", "southcentralus", "westcentralus", "westus", "westus2"]
+	    }
     },
     "variables": {},
     "resources": [
@@ -13,9 +16,7 @@
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
             "name": "[parameters('storageAccountsName')]",
-            "location": {
-			    "allowedValues": ["centralus", "eastus", "eastus2", "northcentralus", "southcentralus", "westcentralus", "westus", "westus2"]
-			},
+            "location": "[parameters('location')]",
             "sku": {
                 "name": "Standard_LRS",
                 "tier": "Standard"
