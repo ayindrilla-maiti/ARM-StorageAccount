@@ -15,7 +15,7 @@
             "name": "[parameters('storageAccountsName')]",
             "location": {
 			    "allowedValues": ["centralus", "eastus", "eastus2", "northcentralus", "southcentralus", "westcentralus", "westus", "westus2"]
-			}
+			},
             "sku": {
                 "name": "Standard_LRS",
                 "tier": "Standard"
