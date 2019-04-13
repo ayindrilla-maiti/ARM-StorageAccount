@@ -5,7 +5,7 @@
         "storageAccountsName": {
             "defaultValue": "",
             "type": "String"
-        }
+        },
 		"location": {
 			"allowedValues": ["centralus", "eastus", "eastus2", "northcentralus", "southcentralus", "westcentralus", "westus", "westus2"]
 	    }
