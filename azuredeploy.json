@@ -16,15 +16,15 @@
                 "description": "Specifies the location in which the Azure Storage resources should be deployed."
             }
         },
-        "storageAccountKind": {
+        "kind": {
             "type": "string",
             "defaultValue": "Storage",
-            "allowedValues": ["Storage", "StorageV2", "BlobStorage", "FileStorage", "BlockBlobStorage"],
+            "allowedValues": ["Storage", "StorageV2", "BlobStorage", "BlockBlobStorage"],
             "metadata": {
                 "description": "Specifies the kind of the Azure Storage resource."
             }
         },
-        "storageAccountType": {
+        "accountType": {
             "defaultValue": "Standard_LRS",
             "allowedValues": [
                 "Standard_LRS",
@@ -34,6 +34,9 @@
                 "Premium_LRS"
             ],
             "type": "string"
+        },
+        "supportsHttpsTrafficOnly": {
+            "type": "bool"
         }
     },
     "resources": [
@@ -42,12 +45,14 @@
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
             "location": "[parameters('location')]",
-            "kind": "[parameters('storageAccountKind')]",
+            "kind": "[parameters('kind')]",
             "sku": {
-                "name": "[parameters('storageAccountType')]",
+                "name": "[parameters('accountType')]",
             },
             "properties": {
+                "supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]"
             }
         }
-    ]
+    ],
+    "outputs": {}
 }
