@@ -6,7 +6,7 @@
             "defaultValue": "",
             "type": "string"
         },
-        "storageAccountlocation": {
+        "location": {
             "defaultValue": "westus2",
             "allowedValues": [
                 "centralus",
@@ -18,7 +18,7 @@
                 "westus",
                 "westus2"
             ],
-            "type": "string"
+            "type": "String"
         },
         "storageAccountType": {
             "defaultValue": "Standard_LRS",
@@ -41,6 +41,14 @@
                 "BlockBlobStorage"
             ],
             "type": "string"
+        },
+        "storageAccountAccessTier": {
+            "defaultValue": "Cool",
+            "allowedValues": [
+                "Hot",
+                "Cool"
+            ],
+            "type": "string"
         }
     },
     "variables": {},
@@ -49,7 +57,7 @@
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
             "name": "[parameters('storageAccountName')]",
-            "location": "[parameters('storageAccountlocation')]",
+            "location": "[parameters('location')]",
             "sku": {
                 "name": "[parameters('storageAccountType')]"
             },
@@ -73,7 +81,7 @@
                     },
                     "keySource": "Microsoft.Storage"
                 },
-                "accessTier": "Cool"
+                "accessTier": "[parameters('storageAccountAccessTier')]"
             }
         }
     ]
