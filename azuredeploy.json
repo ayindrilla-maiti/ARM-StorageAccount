@@ -6,7 +6,7 @@
             "defaultValue": "",
             "type": "string"
         },
-        "location": {
+        "storageAccountlocation": {
             "defaultValue": "westus2",
             "allowedValues": [
                 "centralus",
@@ -57,7 +57,7 @@
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
             "name": "[parameters('storageAccountName')]",
-            "location": "[parameters('location')]",
+            "location": "[parameters('storageAccountlocation')]",
             "sku": {
                 "name": "[parameters('storageAccountType')]"
             },
