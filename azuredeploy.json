@@ -18,7 +18,7 @@
                 "westus",
                 "westus2"
             ],
-            "type": "String"
+            "type": "string"
         },
         "storageAccountType": {
             "defaultValue": "Standard_LRS",
