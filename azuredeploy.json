@@ -25,8 +25,28 @@
             "allowedValues": [
                 "Standard_LRS",
                 "Standard_GRS",
+                "Standard_RAGRS",
                 "Standard_ZRS",
                 "Premium_LRS"
+            ],
+            "type": "string"
+        },
+        "storageAccountKind": {
+            "defaultValue": "Storage",
+            "allowedValues": [
+                "Storage",
+                "StorageV2",
+                "BlobStorage",
+                "FileStorage",
+                "BlockBlobStorage"
+            ],
+            "type": "string"
+        },
+        "storageAccountAccessTier": {
+            "defaultValue": "Cool",
+            "allowedValues": [
+                "Hot",
+                "Cool"
             ],
             "type": "string"
         }
@@ -41,7 +61,7 @@
             "sku": {
                 "name": "[parameters('storageAccountType')]"
             },
-            "kind": "BlobStorage",
+            "kind": "[parameters('storageAccountKind')]",
             "properties": {
                 "networkAcls": {
                     "bypass": "AzureServices",
@@ -61,7 +81,7 @@
                     },
                     "keySource": "Microsoft.Storage"
                 },
-                "accessTier": "Cool"
+                "accessTier": "[parameters('storageAccountAccessTier')]"
             }
         }
     ]
