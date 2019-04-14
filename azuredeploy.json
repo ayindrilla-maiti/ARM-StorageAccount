@@ -10,6 +10,11 @@
 	    "defaultValue": "westus2",
 	    "allowedValues": ["centralus", "eastus", "eastus2", "northcentralus", "southcentralus", "westcentralus", "westus", "westus2"],
 	    "type": "String"
+	},
+	"storageAccountType": {
+	    "defaultValue": "Standard_LRS",
+	    "allowedValues": ["Standard_LRS", "Standard_GRS", "Standard_ZRS", "Premium_LRS"],
+	    "type": "string",
 	}
     },
     "variables": {},
