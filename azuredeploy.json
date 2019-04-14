@@ -11,7 +11,11 @@
 		"location": {
 			"allowedValues": ["centralus", "eastus", "eastus2", "northcentralus", "southcentralus", "westcentralus", "westus", "westus2"],
 			"type": "String"
-	    }
+	    },
+		"performance": {
+			"allowedValues": ["standard", "premium"]
+			"type": "String"
+		}
     },
     "variables": {},
     "resources": [
@@ -24,6 +28,7 @@
                 "name": "Standard_LRS",
                 "tier": "Standard"
             },
+			"performance": "[parameters('performance')]",
             "kind": "BlobStorage",
             "properties": {
                 "networkAcls": {
