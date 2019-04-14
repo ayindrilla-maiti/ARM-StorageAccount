@@ -10,7 +10,7 @@
         },
         "location": {
             "type": "string",
-            "defaultValue": "[resourceGroup().location]",
+            "defaultValue": "westus2",
             "allowedValues": ["centralus", "eastus", "eastus2", "northcentralus", "southcentralus", "westcentralus", "westus", "westus2"],
             "metadata": {
                 "description": "Specifies the location in which the Azure Storage resources should be deployed."
@@ -24,7 +24,7 @@
                 "description": "Specifies the kind of the Azure Storage resource."
             }
         },
-        "storageAccounType": {
+        "storageAccountType": {
             "defaultValue": "Standard_LRS",
             "allowedValues": [
                 "Standard_LRS",
