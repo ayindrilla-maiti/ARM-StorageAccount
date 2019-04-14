@@ -41,14 +41,6 @@
                 "BlockBlobStorage"
             ],
             "type": "string"
-        },
-        "storageAccountAccessTier": {
-            "defaultValue": "Cool",
-            "allowedValues": [
-                "Hot",
-                "Cool"
-            ],
-            "type": "string"
         }
     },
     "variables": {},
@@ -81,7 +73,7 @@
                     },
                     "keySource": "Microsoft.Storage"
                 },
-                "accessTier": "[parameters('storageAccountAccessTier')]"
+                "accessTier": "Cool"
             }
         }
     ]
