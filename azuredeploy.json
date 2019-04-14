@@ -22,6 +22,14 @@
             "metadata": {
                 "description": "Specifies the location in which the Azure Storage resources should be deployed."
             }
+        },
+        "kind": {
+            "type": "string",
+            "defaultValue": "Storage",
+            "allowedValues": ["Storage", "StorageV2", "BlobStorage", "FileStorage", "BlockBlobStorage"],
+            "metadata": {
+                "description": "Specifies the kind of the Azure Storage resource."
+            }
         }
     },
     "resources": [
@@ -30,7 +38,7 @@
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
             "location": "[parameters('location')]",
-            "kind": "StorageV2",
+            "kind": "[parameters('kind')]",
             "sku": {
                 "name": "Standard_LRS",
                 "tier": "Standard"
