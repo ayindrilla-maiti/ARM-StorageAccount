@@ -2,6 +2,20 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+		"parameters": {
+        "rgName": {
+            "type": "string",
+			"metadata": {
+                "description": "Specifies the location in which the Azure Resources should be deployed."
+            }
+        },
+        "rgLocation": {
+            "type": "string",
+			"allowedValues": ["centralus", "eastus", "eastus2", "northcentralus", "southcentralus", "westcentralus", "westus", "westus2"],
+            "metadata": {
+                "description": "Specifies the location in which the Azure Resources should be deployed."
+            }
+        },
         "storageAccountName": {
             "type": "string",
             "metadata": {
@@ -39,8 +53,17 @@
             "type": "bool"
         }
     },
-    "resources": [
+	"resources": [
         {
+            "type": "Microsoft.Resources/resourceGroups",
+            "apiVersion": "2018-07-01",
+            "location": "[parameters('rgLocation')]",
+            "name": "[parameters('rgName')]",
+            "properties": {}
+        }
+    ],
+    "resources": [
+        {	
             "name": "[parameters('storageAccountName')]",
             "type": "Microsoft.Storage/storageAccounts",
             "apiVersion": "2018-07-01",
