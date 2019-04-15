@@ -35,7 +35,7 @@
             ],
             "type": "string"
         },
-        "supportsHttpsTrafficOnly": {
+        "security": {
             "type": "bool"
         }
     },
@@ -47,10 +47,10 @@
             "location": "[parameters('location')]",
             "kind": "[parameters('kind')]",
             "sku": {
-                "name": "[parameters('accountType')]",
+                "name": "[parameters('accountType')]"
             },
             "properties": {
-                "supportsHttpsTrafficOnly": "[parameters('supportsHttpsTrafficOnly')]"
+                "security": "[parameters('security')]"
             }
         }
     ],
